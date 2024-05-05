@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct NavigationSwiftUIApp: App {
+    
+    @StateObject var sessionManager = SessionManager()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView()
+                .environmentObject(sessionManager)
         }
     }
 }
